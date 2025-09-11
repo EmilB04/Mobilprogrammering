@@ -1,14 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Product from './components/Product';
-import React from 'react';
+import { StyleSheet, View } from "react-native";
+import { ProductCard } from "./components/ProductCard";
+import { Product } from "./types";
+
+
+const product: Product = {
+  id: "1",
+  name: "Sample Product",
+  price: 19.99,
+  description: "This is a sample product description.",
+};
 
 export default function App() {
-  console.log("Hello, world!");
   return (
     <View style={styles.container}>
-      <Product productName='Pent bilde' productPrice={199} />
-      <StatusBar style="auto" />
+      <ProductCard />
     </View>
   );
 }
@@ -16,6 +21,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
