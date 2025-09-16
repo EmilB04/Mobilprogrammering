@@ -1,19 +1,11 @@
 import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import { ProductCard } from "./ProductCard";
+import { Product } from "../types";
 
-export default function ProductList({
-  products,
-  theme = { background: "#fff" },
-}: {
-  theme?: { background: string };
-  products: { id: string; name: string; price: number; description: string }[];
-}) {
+export default function ProductList({ products }: { products: Product[] }) {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        style={{ flex: 1, backgroundColor: theme.background }}
-        contentContainerStyle={{ gap: 25 }}
-      >
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -21,13 +13,3 @@ export default function ProductList({
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
-  },
-});
