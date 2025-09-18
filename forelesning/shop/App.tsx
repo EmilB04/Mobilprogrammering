@@ -1,7 +1,6 @@
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View, SafeAreaView } from 'react-native';
 import { ProductCard } from "./components/ProductCard";
 import { Product } from "./types";
-import { SafeAreaView } from "react-native";
 
 
 const product: Product[] = [

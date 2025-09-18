@@ -23,7 +23,7 @@ const studentTitleStyles = {
 
 const studentButtonStyles = {
   borderWidth: 1,
-  borderColor: "red",
+  borderColor: "green",
   padding: 12,
   position: "relative",
 } as const;

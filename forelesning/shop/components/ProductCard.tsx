@@ -16,7 +16,11 @@ export const ProductCard = ({
     <View style={productStyles.card}>
       <ProductName name={product?.name} />
       <ProductPrice price={product?.price} />
-      <Image source={image} style={productStyles.image} contentFit="cover" />
+      <Image 
+        source={image} 
+        style={productStyles.image} 
+        contentFit="cover"
+      />
       <BuyButton />
     </View>
   );
