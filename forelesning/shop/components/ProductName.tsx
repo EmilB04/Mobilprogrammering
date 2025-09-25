@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { Text, TextStyle } from "react-native";
 import { productStyles } from "./styles";
 
 interface ProductNameProps {
@@ -6,5 +6,5 @@ interface ProductNameProps {
 }
 
 export default function ProductName({ name }: ProductNameProps) {
-  return <Text style={productStyles.title}>{name || "Produktnavn"}</Text>;
+  return <Text style={productStyles.title as TextStyle}>{name || "Produktnavn"}</Text>;
 }

@@ -1,50 +1,54 @@
-import { FlatList, StyleSheet, View, SafeAreaView } from 'react-native';
-import { ProductCard } from "./components/ProductCard";
-import { Product } from "./types";
-
-
-const product: Product[] = [
-  {
-    id: "1",
-    name: "Sample Product",
-    price: 19.99,
-    description: "This is a sample product description.",
-  },
-  {
-    id: "2",
-    name: "Another Product",
-    price: 29.99,
-    description: "This is another product description.",
-  },
-  {
-    id: "3",
-    name: "Third Product",
-    price: 39.99,
-    description: "This is the third product description.",
-  }
-];
+import { StyleSheet, View } from "react-native";
+import ProductList from "./components/ProductList";
+import ProductForm from "./components/ProductForm";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={product}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <ProductCard product={item} />}
-        numColumns={2}
-        contentContainerStyle={{ justifyContent: 'center' }}
-      />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <ProductForm />
+          <ProductList
+            products={[
+              {
+                name: "Produkt 1",
+                price: 100,
+                description: "Dette er produkt 1",
+                id: "1",
+              },
+              {
+                name: "Produkt 2",
+                price: 200,
+                description: "Dette er produkt 2",
+                id: "2",
+              },
+              {
+                name: "Produkt 3",
+                price: 300,
+                description: "Dette er produkt 3",
+                id: "3",
+              },
+              {
+                name: "Produkt 4",
+                price: 400,
+                description: "Dette er produkt 4",
+                id: "4",
+              },
+            ]}
+          />
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
     backgroundColor: "#fff",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
     alignItems: "center",
+    justifyContent: "center",
   },
 });

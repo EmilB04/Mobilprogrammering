@@ -1,6 +1,6 @@
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import { productStyles } from "./styles";
-import { Image } from "expo-image";
+// import { Image } from "expo-image";
 import BuyButton from "./BuyButton";
 
 import image from "../assets/wallpaper.jpg";
@@ -19,7 +19,7 @@ export const ProductCard = ({
       <Image 
         source={image} 
         style={productStyles.image} 
-        contentFit="cover"
+        resizeMode="cover"
       />
       <BuyButton />
     </View>
